@@ -99,9 +99,9 @@
 </body>
 
 <script language="javascript">
-    // Assignments, instructions-results pairs
-    /*
-    const assignments = [
+    // Assignment setup
+    // Pre-filled list of instructions-results pairs
+    /* const assignments = [
         ['1 x 3 =', 1 * 3],
         ['2 x 3 =', 2 * 3],
         ['3 x 3 =', 3 * 3],
@@ -111,22 +111,25 @@
         ['7 x 3 =', 7 * 3],
     ] */
 
+    // Parameters for assignment autogeneration
     var assignments = []
-
     const tables = [1, 2, 3, 4, 5, 6, 10];
     const min = 0;
     const max = 10;
+    
+    // Settings
     const maxLives = 5;
     const winCondition = 10;
-
-    // Settings
     const timerDelta = 5000; // ms 
-    const intervalTimerSteps = 25;
     const pointsDelta = 1;
     const livesDelta = -1;
+    
+    // Global constants
+    const intervalTimerSteps = 25;
     const inputChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const emptyHeartSymbol = '&#x2661';
     const fullHeartSymbol = '&#x2764';
+    const assignmentMultiplier = 2;
 
     // DOM Elements
     const assignmentTimerIDElement = document.getElementById("assignment-timer-id");
@@ -336,7 +339,7 @@
     if (gamestate == States.SETUP) {
         // generate assignments
         if (assignments.length == 0) {
-            assignments = generateAssignments(tables, min, max, winCondition * 2)
+            assignments = generateAssignments(tables, min, max, winCondition * assignmentMultiplier)
         }
 
         // Set initial interface
