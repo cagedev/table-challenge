@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Table Challenge</title>
+</head>
+
+<body>
+    <h1 id="input-buffer">{{ input-buffer }}</h1>
+    <h1 id="input-string">{{ input-string }}</h1>
+    <!-- <h1 id="input-timer">{{ input-timer }}</h1> -->
+</body>
+
+<script language="javascript">
+    // Settings
+    const inputChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+    // DOM Elements
+    const bufferElement = document.getElementById("input-buffer");
+    const inputElement = document.getElementById("input-string");
+
+    // Global vars
+    var inputBuffer = [];
+    var inputString = '';
+
+    // Grab key input 
+    window.addEventListener('keyup', (event) => {
+
+        // Catch special keys
+        switch (event.code) {
+            case 'Enter':
+                console.log('Enter')
+        
+                // Input string on 'Enter'
+                inputString = inputBuffer.join('');
+                inputElement.innerHTML = inputString;
+                // Clear buffer
+                inputBuffer.length = 0;
+                break;
+
+            // Remove last charecter on 'Backspace'
+            case 'Backspace':
+                console.log('Backspace');
+                // Remove character
+                inputBuffer.pop();
+                break;
+
+            // Add cahrecter to buffer on other character
+            default:
+                if (event.key in inputChars) {
+                    inputBuffer.push(event.key)
+                }
+        }
+
+        // update the buffer visualisation
+        console.log(inputBuffer);
+        bufferElement.innerText = inputBuffer;
+
+    })
+</script>
+
+</html>

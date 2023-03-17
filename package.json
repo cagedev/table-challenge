@@ -1,0 +1,11 @@
+{
+  "name": "table-challenge",
+  "version": "1.0.0",
+  "description": "Game for learning multiplication tables",
+  "scripts": {
+    "serve": "http-server --port 8888"
+  },
+  "author": "",
+  "license": "ISC"
+}
+ 
