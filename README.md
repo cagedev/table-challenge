@@ -1,6 +1,6 @@
 # Table Challenge
 
-A client-side javascript game for practicing multiplication tables.
+A client-side javascript game for practicing multiplication tables. You can checkout the current default version at [https://cagedev.github.io/table-challenge/](https://cagedev.github.io/table-challenge/).
 
 ## Configuration
 
