@@ -334,6 +334,11 @@
             updatePlayerinterface();
         });
     })
+    
+    // open virtual keyboard if on mobile
+    if ("virtualKeyboard" in navigator) {
+        navigator.virtualKeyboard.show();
+    }
 
     // Start game
     if (gamestate == States.SETUP) {
