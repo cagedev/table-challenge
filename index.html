@@ -337,6 +337,7 @@
     
     // open virtual keyboard if on mobile
     if ("virtualKeyboard" in navigator) {
+        navigator.virtualKeyboard.overlaysContent = true;
         navigator.virtualKeyboard.show();
     }
 
