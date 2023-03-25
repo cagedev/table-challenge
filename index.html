@@ -336,14 +336,15 @@
     })
     
     // open virtual keyboard if on mobile
-    if ("virtualKeyboard" in navigator) {
+    // This doesn't seem to work :(
+    /* if ("virtualKeyboard" in navigator) {
         window.addEventListener("click", () => {
             if (confirm('You seem to be on a mobile device. Show the keyboard?')) {
                 navigator.virtualKeyboard.overlaysContent = true;
                 navigator.virtualKeyboard.show();
             }
         }, {once : true});
-    }
+    } */
 
     // Start game
     if (gamestate == States.SETUP) {
