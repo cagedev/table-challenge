@@ -337,8 +337,10 @@
     
     // open virtual keyboard if on mobile
     if ("virtualKeyboard" in navigator) {
-        navigator.virtualKeyboard.overlaysContent = true;
-        navigator.virtualKeyboard.show();
+        if (confirm('You seem to be on a mobile device. Show the keyboard?')) {
+            navigator.virtualKeyboard.overlaysContent = true;
+            navigator.virtualKeyboard.show();
+        }
     }
 
     // Start game
